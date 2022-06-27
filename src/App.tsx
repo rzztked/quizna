@@ -36,20 +36,26 @@ function App() {
 const [text, setText ] = useState(0);
   const [ score811, setScore811 ] = useState(0);
 
-  const timer = setTimeout(
-    () => setText(1), 
-    30000
-  );
+
+
 
   return (
     
      <>
+
+<header style={{ textAlign: 'center', marginTop: '10px' }}>
+      <a style={{ margin: '20px', color: 'black', textDecoration: 'none'}} href="https://quiztest32.herokuapp.com/">Первый класс</a>
+      <a style={{ color: 'black', textDecoration: 'none'}}  href="https://quiztest32.herokuapp.com/">Второй класс</a>
+    
+    </header>
+<hr style={{ marginTop: '1%' }}/>
+
 {hider === 0 ? (
 <>
 {question === '1' ? ( <>
   <div style={{ display: 'flex' }}>
-<img style={{ width: '350px', height: '280px', marginTop: '10%', marginLeft: '17%', borderRadius: "10px" }} src={String(p1)} />
-<p style={{ width: '38%', marginTop: '10%', marginLeft: '10%', fontSize: '14px' }}>Здороваемся, улыбаемся и объясняем процедуру:<br />
+<img style={{ width: '475px', height: '350px', marginTop: '5%', marginLeft: '12.5%', borderRadius: "10px" }} src={String(p1)} />
+<p style={{ width: '38%', marginTop: '5%', marginLeft: '10%', fontSize: '14px' }}>Здороваемся, улыбаемся и объясняем процедуру:<br />
 - Добрый день! Меня хорошо видно, слышно?<br />
 - Отлично! Я вас тоже вижу и слышу!<br />
 - Готовы начинать?<br />
@@ -76,10 +82,10 @@ const [text, setText ] = useState(0);
 Что ж, тогда давай проверим, что ты уже знаешь и умеешь.
 Согласен/сна?</p>
 </div>
-<br /><br />
+<br />
 <div style={{ display: 'inline-flex', marginLeft: '25%', marginRight: '50%'}}>
   <br />
-  <button className="button-23"  onClick={() => {setQuestion('2') }} >Следующий слайд</button>
+  <button className="button-23"  onClick={() => {setQuestion('2');  setText(0) }} >Следующий слайд</button>
 
 
   
@@ -89,8 +95,8 @@ const [text, setText ] = useState(0);
 
 {question === '2' ? ( <>
   <div style={{ display: 'flex' }}>
-<img style={{ width: '350px', height: '280px', marginTop: '10%', marginLeft: '17%', borderRadius: "10px" }} src={String(p2)} />
-<p style={{ width: '38%', marginTop: '10%', marginLeft: '10%', fontSize: '14px' }}>Здороваемся, улыбаемся и объясняем процедуру:<br />
+<img style={{ width: '475px', height: '350px', marginTop: '5%', marginLeft: '12.5%', borderRadius: "10px" }} src={String(p2)} />
+<p style={{ width: '38%', marginTop: '5%', marginLeft: '10%', fontSize: '14px' }}>Здороваемся, улыбаемся и объясняем процедуру:<br />
 - Добрый день! Меня хорошо видно, слышно?<br />
 - Отлично! Я вас тоже вижу и слышу!<br />
 - Готовы начинать?<br />
@@ -117,10 +123,11 @@ const [text, setText ] = useState(0);
 Что ж, тогда давай проверим, что ты уже знаешь и умеешь.
 Согласен/сна?</p>
 </div>
-<br /><br />
+<br />
 <div style={{ display: 'inline-flex', marginLeft: '25%', marginRight: '50%'}}>
   <br />
-  <button className="button-23"  onClick={() => {setQuestion('3')}} >Следующий слайд</button>
+  <button className="button-23"  onClick={() => {setQuestion('1');  setText(0) }} >Предыдущий слайд</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('3');  setText(0)}} >Следующий слайд</button>
  
 </div> </>
 ) : null}
@@ -128,8 +135,8 @@ const [text, setText ] = useState(0);
 
 {question === '3' ? ( <>
   <div style={{ display: 'flex' }}>
-<img style={{ width: '350px', height: '280px', marginTop: '10%', marginLeft: '17%', borderRadius: "10px" }} src={String(p3)} />
-<p style={{ width: '38%', marginTop: '10%', marginLeft: '10%', fontSize: '14px' }}>Здороваемся, улыбаемся и объясняем процедуру:<br />
+<img style={{ width: '475px', height: '350px', marginTop: '5%', marginLeft: '12.5%', borderRadius: "10px" }} src={String(p3)} />
+<p style={{ width: '38%', marginTop: '5%', marginLeft: '10%', fontSize: '14px' }}>Здороваемся, улыбаемся и объясняем процедуру:<br />
 - Добрый день! Меня хорошо видно, слышно?<br />
 - Отлично! Я вас тоже вижу и слышу!<br />
 - Готовы начинать?<br />
@@ -156,10 +163,10 @@ const [text, setText ] = useState(0);
 Что ж, тогда давай проверим, что ты уже знаешь и умеешь.
 Согласен/сна?</p>
 </div>
-<br /><br />
+<br />
 <div style={{ display: 'inline-flex', marginLeft: '25%', marginRight: '50%'}}>
-  <br />
-  <button className="button-23"  onClick={() => {setQuestion('4')}} >Следующий слайд</button>
+  <br /><button className="button-23"  onClick={() => {setQuestion('2');  setText(0) }} >Предыдущий слайд</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('4');  setText(0)}} >Следующий слайд</button>
 </div> </>
 ) : null}
 
@@ -168,15 +175,15 @@ const [text, setText ] = useState(0);
 
 {question === '4' ? ( <>
   <div style={{ display: 'flex' }}>
-<img style={{ width: '350px', height: '280px', marginTop: '10%', marginLeft: '17%', borderRadius: "10px" }} src={String(p4)} />
+<img style={{ width: '475px', height: '350px', marginTop: '5%', marginLeft: '12.5%', borderRadius: "10px" }} src={String(p4)} />
 <p style={{ width: '40%', marginTop: '15%', marginLeft: '10%' }}>Тогда мы с тобой отправимся в гости к сообразительному
 завру Грише. Вместе с ним мы подготовим к открытию
 настоящий парк аттракционов!</p>
 </div>
-<br /><br />
+<br />
 <div style={{ display: 'inline-flex', marginLeft: '25%', marginRight: '50%'}}>
-  <br />
-  <button className="button-23"  onClick={() => {setQuestion('5')}} >Следующий слайд</button>
+  <br /><button className="button-23"  onClick={() => {setQuestion('3');  setText(0) }} >Предыдущий слайд</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('5');  setText(0)}} >Следующий слайд</button>
 </div> </>
 ) : null}
 
@@ -184,17 +191,20 @@ const [text, setText ] = useState(0);
 
 {question === '5' ? ( <>
   <div style={{ display: 'flex' }}>
-<img style={{ width: '350px', height: '280px', marginTop: '10%', marginLeft: '17%', borderRadius: "10px" }} src={String(p5)} />
+<img style={{ width: '475px', height: '350px', marginTop: '5%', marginLeft: '12.5%', borderRadius: "10px" }} src={String(p5)} />
 <p style={{ width: '40%', marginTop: '15%', marginLeft: '10%' }}>Нам нужно очень постараться, чтобы справиться с задачей! В
 этом деле Грише не обойтись без твоей помощи! По мере
 выполнения заданий это место превратится в настоящий остров мечты каждого ребёнка, где можно покататься на
 множестве аттракционов и весело провести время. Что ж,
 *Имя ребёнка, давай начинать?</p>
 </div>
-<br /><br />
+<br />
 <div style={{ display: 'inline-flex', marginLeft: '25%', marginRight: '50%'}}>
-  <br />
-  <button className="button-23"  onClick={() => {setQuestion('6'); clearTimeout(timer); setText(0)}} >Следующий слайд</button>
+  <br /><button className="button-23"  onClick={() => {setQuestion('4');  setText(0) }} >Предыдущий слайд</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('6');  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  );}} >Следующий слайд</button>
 </div> </>
 ) : null}
 
@@ -205,7 +215,7 @@ const [text, setText ] = useState(0);
 
 {question === '6' ? ( <>
   <div style={{ display: 'flex' }}>
-<img style={{ width: '350px', height: '280px', marginTop: '10%', marginLeft: '17%', borderRadius: "10px" }} src={String(p6)} />
+<img style={{ width: '475px', height: '350px', marginTop: '5%', marginLeft: '12.5%', borderRadius: "10px" }} src={String(p6)} />
 <p style={{ width: '40%', marginTop: '15%', marginLeft: '10%' }}>Сначала займёмся возведением самого большого
 аттракциона - колеса обозрения.
 Найди номера кабинок, которые зашифрованы в примерах.
@@ -218,123 +228,163 @@ const [text, setText ] = useState(0);
 получилось 25?)
 </p>
 </div>
-<br /><br />
+<br />
 <div style={{ display: 'inline-flex', marginLeft: '25%', marginRight: '50%'}}>
-  <br />
-  <button className="button-23"  onClick={() => {setQuestion('7'); setScore6(score6 + 1); clearTimeout(timer); setText(0)}} >Ребёнок справился</button><br /><br />
-  <button className="button-23"  onClick={() => {setQuestion('7'); clearTimeout(timer); setText(0)}} >Ребёнок не справился</button>
-</div>
+  <br /><button className="button-23"  onClick={() => {setQuestion('5');  setText(0) }} >Предыдущий слайд</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('7'); setScore6(score6 + 1);  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  );}} >Ребёнок справился</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('7');  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  );}} >Ребёнок не справился</button> 
+</div>{text === 1 ? (<p style={{textAlign: 'center', bottom: '5px', marginTop: '-1%'}}><span style={{ fontSize: '50px', color: 'red'}}>⚠</span>&nbsp;&nbsp;&nbsp;Вы тратите много врмемени на задание. Переходите к следующему.</p>) : null}
 <br /><br />
-<div>
-{text === 1 ? (<p><span style={{ fontSize: '50px', color: 'red'}}>⚠</span>&nbsp;&nbsp;&nbsp;Вы тратите много врмемени на задание. Переходите к следующему.</p>) : null}
-  </div> </>
+
+
+   </>
 ) : null}
 
 
 
 {question === '7' ? ( <>
   <div style={{ display: 'flex' }}>
-<img style={{ width: '350px', height: '280px', marginTop: '10%', marginLeft: '17%', borderRadius: "10px" }} src={String(p7)} />
+<img style={{ width: '475px', height: '350px', marginTop: '5%', marginLeft: '12.5%', borderRadius: "10px" }} src={String(p7)} />
 <p style={{ width: '40%', marginTop: '15%', marginLeft: '10%' }}>93 - 45 = 48 (Какое число нужно отнять от 93, чтобы
 получилось 48?)
 </p>
 </div>
-<br /><br />
+<br />
 <div style={{ display: 'inline-flex', marginLeft: '25%', marginRight: '50%'}}>
-  <br />
-  <button className="button-23"  onClick={() => {setQuestion('8'); setScore7(score7 + 1); clearTimeout(timer); setText(0)}} >Ребёнок справился</button><br /><br />
-  <button className="button-23"  onClick={() => {setQuestion('8'); clearTimeout(timer); setText(0)}} >Ребёнок не справился и говорит что знаком с трёхзначными числами</button><br /><br />
-  <button className="button-23"  onClick={() => {setQuestion('12'); clearTimeout(timer); setText(0)}} >Ребёнок не справился и говорит что не знает таблицу умножения</button>
-</div><br /><br />
-<div>
-{text === 1 ? (<p><span style={{ fontSize: '50px', color: 'red'}}>⚠</span>&nbsp;&nbsp;&nbsp;Вы тратите много врмемени на задание. Переходите к следующему.</p>) : null}
-  </div>  </>
+  <br /><button className="button-23"  onClick={() => {setQuestion('6');  setText(0) }} >Предыдущий слайд</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('8'); setScore7(score7 + 1);  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  );}} >Ребёнок справился</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('8');  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  );}} >Ребёнок не справился и говорит что знаком с трёхзначными числами</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('12');  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  );}} >Ребёнок не справился и говорит что не знает таблицу умножения</button>
+</div>
+{text === 1 ? (<p style={{textAlign: 'center', bottom: '5px', marginTop: '-1%'}}><span style={{ fontSize: '50px', color: 'red'}}>⚠</span>&nbsp;&nbsp;&nbsp;Вы тратите много врмемени на задание. Переходите к следующему.</p>) : null}
+  </>
 ) : null}
 
 
 {question === '8' ? ( <>
   <div style={{ display: 'flex' }}>
-<img style={{ width: '350px', height: '280px', marginTop: '10%', marginLeft: '17%', borderRadius: "10px" }} src={String(p8)} />
+<img style={{ width: '475px', height: '350px', marginTop: '5%', marginLeft: '12.5%', borderRadius: "10px" }} src={String(p8)} />
 <p style={{ width: '40%', marginTop: '15%', marginLeft: '10%' }}>139 - 83 = 56 (Какое число
 нужно отнять от 139, чтобы получить 83?)
 </p>
 </div>
-<br /><br />
+<br />
 <div style={{ display: 'inline-flex', marginLeft: '25%', marginRight: '50%'}}>
-  <br />
-  <button className="button-23"  onClick={() => {setQuestion('9'); setScore811(score811 + 1); clearTimeout(timer); setText(0)}} >Ребёнок справился и знает таблицу умножения</button><br /><br />
-  <button className="button-23"  onClick={() => {setQuestion('9'); clearTimeout(timer); setText(0)}} >Ребёнок не справился и говорит что изучал/знает таблицу умножения</button><br /><br />
-  <button className="button-23"  onClick={() => {setQuestion('12'); clearTimeout(timer); setText(0)}} >Ребёнок не справился и говорит что не знает таблицу умножения</button>
-</div><br /><br />
-<div>
-{text === 1 ? (<p><span style={{ fontSize: '50px', color: 'red'}}>⚠</span>&nbsp;&nbsp;&nbsp;Вы тратите много врмемени на задание. Переходите к следующему.</p>) : null}
-  </div>  </>
+  <br /><button className="button-23"  onClick={() => {setQuestion('7');  setText(0) }} >Предыдущий слайд</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('9'); setScore811(score811 + 1);  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  );}} >Ребёнок справился и знает таблицу умножения</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('9');  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  );}} >Ребёнок не справился и говорит что изучал/знает таблицу умножения</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('12');  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  );}} >Ребёнок не справился и говорит что не знает таблицу умножения</button>
+</div>
+{text === 1 ? (<p style={{textAlign: 'center', bottom: '5px', marginTop: '-1%'}}><span style={{ fontSize: '50px', color: 'red'}}>⚠</span>&nbsp;&nbsp;&nbsp;Вы тратите много врмемени на задание. Переходите к следующему.</p>) : null}
+   </>
 ) : null}
 
 
 {question === '9' ? ( <>
   <div style={{ display: 'flex' }}>
-<img style={{ width: '350px', height: '280px', marginTop: '10%', marginLeft: '17%', borderRadius: "10px" }} src={String(p9)} />
+<img style={{ width: '475px', height: '350px', marginTop: '5%', marginLeft: '12.5%', borderRadius: "10px" }} src={String(p9)} />
 <p style={{ width: '40%', marginTop: '15%', marginLeft: '10%' }}>4 ∙ 6 + 2 = 26 (На какое число нужно умножить
 число 4 и прибавить
 получилось 26?)
 </p>
 </div>
-<br /><br />
+<br />
 <div style={{ display: 'inline-flex', marginLeft: '25%', marginRight: '50%'}}>
-  <br />
-  <button className="button-23"  onClick={() => {setQuestion('10'); setScore811(score811 + 1); clearTimeout(timer); setText(0)}} >Ребёнок справился</button><br /><br />
-  <button className="button-23"  onClick={() => {setQuestion('12'); clearTimeout(timer); setText(0)}} >Ребёнок не справился</button>
-</div><br /><br />
-<div>
-{text === 1 ? (<p><span style={{ fontSize: '50px', color: 'red'}}>⚠</span>&nbsp;&nbsp;&nbsp;Вы тратите много врмемени на задание. Переходите к следующему.</p>) : null}
-  </div>  </>
+  <br /><button className="button-23"  onClick={() => {setQuestion('8');  setText(0) }} >Предыдущий слайд</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('10'); setScore811(score811 + 1);  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  );}} >Ребёнок справился</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('12');  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  );}} >Ребёнок не справился</button>
+</div>
+{text === 1 ? (<p style={{textAlign: 'center', bottom: '5px', marginTop: '-1%'}}><span style={{ fontSize: '50px', color: 'red'}}>⚠</span>&nbsp;&nbsp;&nbsp;Вы тратите много врмемени на задание. Переходите к следующему.</p>) : null}
+   </>
 ) : null}
 
 {question === '10' ? ( <>
   <div style={{ display: 'flex' }}>
-<img style={{ width: '350px', height: '280px', marginTop: '10%', marginLeft: '17%', borderRadius: "10px" }} src={String(p10)} />
+<img style={{ width: '475px', height: '350px', marginTop: '5%', marginLeft: '12.5%', borderRadius: "10px" }} src={String(p10)} />
 <p style={{ width: '40%', marginTop: '15%', marginLeft: '10%' }}>(5 ∙ 3 + 3) ∙ 2 = 36 (Подбери подходящее число)
 Подсказка: попробуй подобрать необходимое число, советую
 начать с малого (с числа 1).
 </p>
 </div>
-<br /><br />
+<br />
 <div style={{ display: 'inline-flex', marginLeft: '25%', marginRight: '50%'}}>
-  <br />
-  <button className="button-23"  onClick={() => {setQuestion('11'); setScore811(score811 + 1); clearTimeout(timer); setText(0)}} >Ребёнок справился</button>&nbsp;&nbsp;&nbsp;
-  <button className="button-23"  onClick={() => {setQuestion('12'); clearTimeout(timer); setText(0)}} >Ребёнок не справился</button>
-</div><br /><br />
-<div>
-{text === 1 ? (<p><span style={{ fontSize: '50px', color: 'red'}}>⚠</span>&nbsp;&nbsp;&nbsp;Вы тратите много врмемени на задание. Переходите к следующему.</p>) : null}
-  </div>  </>
+  <br /><button className="button-23"  onClick={() => {setQuestion('9');  setText(0) }} >Предыдущий слайд</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('11'); setScore811(score811 + 1);  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  );}} >Ребёнок справился</button>&nbsp;&nbsp;&nbsp;
+  <button className="button-23"  onClick={() => {setQuestion('12');  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  );}} >Ребёнок не справился</button>
+</div>
+{text === 1 ? (<p style={{textAlign: 'center', bottom: '5px', marginTop: '-1%'}}><span style={{ fontSize: '50px', color: 'red'}}>⚠</span>&nbsp;&nbsp;&nbsp;Вы тратите много врмемени на задание. Переходите к следующему.</p>) : null}
+    </>
 ) : null}
 
 
 {question === '11' ? ( <>
   <div style={{ display: 'flex' }}>
-<img style={{ width: '350px', height: '280px', marginTop: '10%', marginLeft: '17%', borderRadius: "10px" }} src={String(p11)} />
+<img style={{ width: '475px', height: '350px', marginTop: '5%', marginLeft: '12.5%', borderRadius: "10px" }} src={String(p11)} />
 <p style={{ width: '40%', marginTop: '15%', marginLeft: '10%' }}>275 : 25 + 25 ∙ 3 = 86 (Найди неизвестный
 номер кабинки)
 Подсказка: на какие числа число 275 делится нацело? (1, 5,
 11, 25, 55, 275)
 </p>
 </div>
-<br /><br />
+<br />
 <div style={{ display: 'inline-flex', marginLeft: '25%', marginRight: '50%'}}>
-  <br />
-  <button className="button-23"  onClick={() => {setQuestion('12'); setScore811(score811 + 1); clearTimeout(timer); setText(0)}} >Ребёнок справился</button>&nbsp;&nbsp;&nbsp;
-  <button className="button-23"  onClick={() => {setQuestion('12'); clearTimeout(timer); setText(0)}} >Ребёнок не справился</button>
-</div><br /><br />
-<div>
-{text === 1 ? (<p><span style={{ fontSize: '50px', color: 'red'}}>⚠</span>&nbsp;&nbsp;&nbsp;Вы тратите много врмемени на задание. Переходите к следующему.</p>) : null}
-  </div>  </>
+  <br /><button className="button-23"  onClick={() => {setQuestion('10');  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  ); }} >Предыдущий слайд</button><br /><br />
+  <button className="button-23"  onClick={() => {setQuestion('12'); setScore811(score811 + 1);  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  );}} >Ребёнок справился</button>&nbsp;&nbsp;&nbsp;
+  <button className="button-23"  onClick={() => {setQuestion('12');  setText(0); setTimeout(
+    () => setText(1), 
+    30000
+  );}} >Ребёнок не справился</button>
+</div>
+{text === 1 ? (<p style={{textAlign: 'center', bottom: '5px', marginTop: '-1%'}}><span style={{ fontSize: '50px', color: 'red'}}>⚠</span>&nbsp;&nbsp;&nbsp;Вы тратите много врмемени на задание. Переходите к следующему.</p>) : null}
+   </>
 ) : null}
 
 
 {question === '12' ? ( <>
   <div style={{ display: 'flex' }}>
-<img style={{ width: '350px', height: '280px', marginTop: '10%', marginLeft: '17%', borderRadius: "10px" }} src={String(p12)} />
+<img style={{ width: '475px', height: '350px', marginTop: '5%', marginLeft: '12.5%', borderRadius: "10px" }} src={String(p12)} />
 <p style={{ width: '40%', marginTop: '15%', marginLeft: '10%' }}>Превосходно! Такое огромное сооружение точно привлечет в
 парк многих жителей Заврогорода. Думаю, они с
 удовольствием прокатятся на нашем колесе обозрения. А
@@ -345,7 +395,7 @@ const [text, setText ] = useState(0);
 </div>
 <br /><br />
 <div style={{ display: 'inline-flex', marginLeft: '25%', marginRight: '50%'}}>
-  <br />
+  <br /><button className="button-23"  onClick={() => {setQuestion('11');  setText(0) }} >Предыдущий слайд</button><br /><br />
   <p>Ваш уровень: {score6 === 1 && score7 === 1 && score811 === 4 ? (<p>Высокий, 2 балла</p>) : null }
 
 
